@@ -9,4 +9,4 @@ const contactSchema = new mongoose.Schema(
 )
 
 // ----- model definition -----
-export const contactModel = mongoose.model('Contact', contactSchema)
+export const ContactModel = mongoose.model('Contact', contactSchema)
