@@ -4,14 +4,14 @@ import { ContactModel } from './schema';
 // connect to db
 await mongoose.connect(Bun.env.DATABASE as string);
 
-// create new Animal
+// create new Contact
 const contact = new ContactModel({
   name: 'Orwell',
   phone: 987654321,
 });
 await contact.save()
 
-// read all Animals
+// read all Contacts
 const contacts = await ContactModel.find();
 console.log("🔥🔥🔥 ~ file: index.ts:25 ~ contacts:", contacts)
 
