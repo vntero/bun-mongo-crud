@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose'
 
-// ----- schema definition -----
+// schema definition
 const contactSchema = new mongoose.Schema(
     {
         name: { type: String },
@@ -8,5 +8,13 @@ const contactSchema = new mongoose.Schema(
     }
 )
 
-// ----- model definition -----
+// model definition
 export const ContactModel = mongoose.model('Contact', contactSchema)
+
+// type definition
+// export type Contact = typeof ContactModel
+
+export interface Contact {
+    name: string,
+    phone: number,
+}
