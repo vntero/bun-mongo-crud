@@ -1,17 +1,8 @@
-// const server = Bun.serve({
-//     port: 3000,
-//     fetch(request) {
-//         return new Response('Welcome to Bun!')
-//     }
-// })
-
-// console.log(`Listening on port:${server.port}`)
-
 import * as mongoose from 'mongoose';
 import { ContactModel } from './schema';
 
 // connect to db
-await mongoose.connect('mongodb+srv://vntero:vntero@cluster0.ysxz6.mongodb.net/');
+await mongoose.connect(Bun.env.DATABASE as string);
 
 // create new Animal
 const contact = new ContactModel({
