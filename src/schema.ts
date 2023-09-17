@@ -1,20 +1,22 @@
-import * as mongoose from 'mongoose'
+import mongoose from 'mongoose'
 
 // schema definition
-const contactSchema = new mongoose.Schema(
-    {
-        name: { type: String },
-        phone: { type: String },
-    }
-)
+const contactSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
+});
 
-// model definition
 export const ContactModel = mongoose.model('Contact', contactSchema)
 
 // type definition
-// export type Contact = typeof ContactModel
-
-export interface Contact {
-    name: string,
-    phone: number,
+export type ContactType = {
+    name: string;
+    phone: number;
 }
+  
